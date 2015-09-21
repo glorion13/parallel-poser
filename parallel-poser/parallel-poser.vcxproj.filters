@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Animation">
+      <UniqueIdentifier>{2630f2fc-161a-4c79-a19b-246461586865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Optimisation">
+      <UniqueIdentifier>{739445f1-0b77-4c84-9819-f851e2724e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Optimisation\PSO">
+      <UniqueIdentifier>{cdd8b987-863e-4763-b196-d58f69d7c59e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animation">
+      <UniqueIdentifier>{103d4cad-7f6a-4242-ac89-51d4f867e9c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Optimisation">
+      <UniqueIdentifier>{3843f42e-ec35-48fe-bf55-29fd3a9ea95b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Optimisation\PSO">
+      <UniqueIdentifier>{626deb86-98f1-4927-9748-344414a14767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{f95bd40e-d499-44bd-9090-2f6d9aabcc06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{d4829dbf-0832-4f45-af7d-c3a3bedd7d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vision">
+      <UniqueIdentifier>{45b0d8a8-6f39-4a7e-943e-f79be5d58e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vision\Descriptors">
+      <UniqueIdentifier>{77fb14aa-0db4-418b-83cd-e9e772b8ae62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vision\Metrics">
+      <UniqueIdentifier>{3a7c6745-070d-49d2-b83a-c54ebbb6466b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vision">
+      <UniqueIdentifier>{e39d1e5c-db0a-4dfd-a4d1-262b8a1c8fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vision\Descriptors">
+      <UniqueIdentifier>{db37ddd2-413c-4e1d-a2bc-5f3409b0a0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vision\Metrics">
+      <UniqueIdentifier>{c36f5945-8941-424f-95db-693a56c89c73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FitnessFunction.cpp">
+      <Filter>Source Files\Optimisation\PSO</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Source Files\Optimisation\PSO</Filter>
+    </ClCompile>
+    <ClCompile Include="Swarm.cpp">
+      <Filter>Source Files\Optimisation\PSO</Filter>
+    </ClCompile>
+    <ClCompile Include="GlMain.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericDescriptors.cpp">
+      <Filter>Source Files\Vision\Descriptors</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericMetrics.cpp">
+      <Filter>Source Files\Vision\Metrics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FitnessFunctions.h">
+      <Filter>Header Files\Optimisation\PSO</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Header Files\Optimisation\PSO</Filter>
+    </ClInclude>
+    <ClInclude Include="Swarm.h">
+      <Filter>Header Files\Optimisation\PSO</Filter>
+    </ClInclude>
+    <ClInclude Include="GlMain.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericDescriptors.h">
+      <Filter>Header Files\Vision\Descriptors</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericMetrics.h">
+      <Filter>Header Files\Vision\Metrics</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

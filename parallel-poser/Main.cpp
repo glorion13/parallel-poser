@@ -39,13 +39,13 @@ int psoInitialisation(GlMain glMain)
 		else
 		{
 			concurrency::array_view<Particle, 1> parParticles(swarm.size, swarm.particles);
-			concurrency::parallel_for_each(parParticles.extent, [&](int i) restrict(amp)
+			concurrency::parallel_for_each(parParticles.extent, [&](int i) restrict(cpu)
 			{
 				// Set personal best
-				if ((swarm.particles[i].bestFitness == -1) || (swarm.particles[i].fitness > swarm.particles[i].bestFitness))
+				if ((parParticles[i].bestFitness == -1) || (parParticles[i].fitness > parParticles[i].bestFitness))
 				{
-					swarm.particles[i].bestPosition = swarm.particles[i].position;
-					swarm.particles[i].bestFitness = swarm.particles[i].fitness;
+					parParticles[i].bestPosition = parParticles[i].position;
+					parParticles[i].bestFitness = parParticles[i].fitness;
 				}
 				// Set global best
 				if (!(swarm.globalBest.initialised) || (swarm.particles[i].fitness > swarm.globalBest.fitness))
@@ -53,10 +53,10 @@ int psoInitialisation(GlMain glMain)
 					swarm.globalBest = Particle(swarm.particles[i]);
 				}
 				// Update particle
-				glMain.UpdateDisplay();
-				swarm.particles[i].Update(swarm.globalBest, 2.0, 2.0);
+				//glMain.UpdateDisplay();
+				parParticles[i].Update(swarm.globalBest, 2.0, 2.0);
 				// Evaluate particle
-				swarm.particles[i].fitness = fitnessFunctionLibrary.H1(swarm.particles[i]);
+				parParticles[i].fitness = fitnessFunctionLibrary.H1(parParticles[i]);
 			});
 		}
 	}

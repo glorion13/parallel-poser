@@ -41,14 +41,15 @@ int Particle::BasicUpdateFunction(Particle globalBest, float phi1, float phi2)
 	{
 		concurrency::array_view<float, 1> parVelocity(size, velocity);
 		concurrency::array_view<float, 1> parPosition(size, position);
-		concurrency::array_view<const float, 1> parGlobalBestPosition(size, globalBest.position);
+		concurrency::array_view<const float,1 > parGlobalBestPosition(size, globalBest.position);
 		concurrency::array_view<const float, 1> parBestPosition(size, bestPosition);
-		parVelocity.discard_data();
 
-		concurrency::parallel_for_each(parVelocity.extent, [&](int i) restrict(amp)
+		concurrency::parallel_for_each(parVelocity.extent,
+			[=](concurrency::index<1> i)
+			restrict(amp)
 		{
-			float u1 = (float)rand() / ((float)RAND_MAX / phi1);
-			float u2 = (float)rand() / ((float)RAND_MAX / phi2);
+			float u1 = (float) rand() / ((float) RAND_MAX / phi1);
+			float u2 = (float) rand() / ((float) RAND_MAX / phi2);
 
 			// Update velocity
 			parVelocity[i] += u1 * (parBestPosition[i] - parPosition[i]) + u2 * (parGlobalBestPosition[i] - parPosition[i]);
